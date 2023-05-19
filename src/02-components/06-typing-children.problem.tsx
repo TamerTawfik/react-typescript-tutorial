@@ -1,13 +1,16 @@
-import React from "react";
+import React, { ReactNode } from "react";
 
-export const Button = (props: {}) => {
-  return <button>{props.children}</button>;
+type Props = {
+  children?: React.ReactNode;
+};
+
+export const Button = ({ children }: Props) => {
+  return <button>{children}</button>;
 };
 
 const Parent = () => {
   return (
     <>
-      {/* @ts-expect-error */}
       <Button></Button>
       <Button>Hello world!</Button>
     </>
